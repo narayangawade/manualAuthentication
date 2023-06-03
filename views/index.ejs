@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+    <div>
+      <p>Name :  <%=user.name%></p>
+     <p>Email : <%=user.email%></p>
+    </div>
+
+    <div>
+        <h2>ContactList</h2>
+        <div>
+            <ul>
+                <% for(let i of contact){%>
+                    <li>
+                        <div>
+                            <p><%= i.name%></p>
+                            <p><%= i.phone%></p>
+                        </div>
+                    </li>
+                <%}%>
+            </ul>
+        </div>
+    </div>
+
+    <form action="/create-contact" method="POST">
+    <input type="text" name="name" placeholder="Enter Your Name" required/>
+    <input type="text" name="phone" placeholder="Enter Your Phone" required/>
+        <button type="submit"> Add Contact</button>
+    </form>
+
+    <form action="/signout" method="POST">
+    <input type="submit" value="Log out">
+    </form>
+</body>
+</html>
+
+password -> 123 -->  (crypto)ekdotee , (salt)12345678910111213141516,
+
+
+signup 
+password --> ok@123 -> (hashPassword) == fyrhgds@&!#237i4GDjh
+
+signin 
+password --> ok@123 -> (hashPassword) == fyerjhds@&!#237i4BHJEs
